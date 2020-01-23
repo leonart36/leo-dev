@@ -1,0 +1,176 @@
+                                                        @import url('https://fonts.googleapis.com/css?family=Raleway');
+                                                        html,
+                                                        h1,
+                                                        h2,
+                                                        h3,
+                                                        h4,
+                                                        h5,
+                                                        h6,
+                                                        a {
+                                                            font-family: "Raleway";
+                                                        }
+                                                        
+                                                        body {
+                                                            padding: 20px;
+                                                            padding-bottom: 100px;
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                                            justify-content: space-around;
+                                                        }
+                                                        
+                                                        .information {
+                                                            float: left;
+                                                            max-width: 100%;
+                                                            margin: 20px;
+                                                            display: flex;
+                                                        }
+                                                        
+                                                        .information span {
+                                                            float: left;
+                                                            position: relative;
+                                                            top: 20px;
+                                                            left: 20px;
+                                                        }
+                                                        
+                                                        .row1 {
+                                                            float: left;
+                                                            background: #afbbcf;
+                                                            border-radius: 5px;
+                                                            padding: 15px 30px 40px 30px;
+                                                            /*display: grid;
+                                                            grid-auto-rows: 1fr 1fr 1fr;
+                                                            grid-template-columns: 1fr 1fr;
+                                                            grid-template-areas: "fio fio" "foto data" "about about";
+                                                            /*выравнивание по горизонтал*/
+                                                            /*align-items: stretch;*/
+                                                            /*выравнивание по вертикали*/
+                                                        }
+                                                        
+                                                        .foto img {
+                                                            float: left;
+                                                            max-height: 200px;
+                                                            border: 1px solid white;
+                                                            border-radius: 5px;
+                                                            margin: 20px 0 0 10px;
+                                                        }
+                                                        
+                                                        p {
+                                                            float: left;
+                                                            position: relative;
+                                                            top: 20px;
+                                                            max-width: 100%;
+                                                        }
+                                                        
+                                                        .wrapper {
+                                                            width: 90%;
+                                                            margin: 20px auto;
+                                                            padding-bottom: 40px;
+                                                        }
+                                                        
+                                                        .container ul li {
+                                                            list-style: none;
+                                                            float: left;
+                                                            width: 20%;
+                                                            margin: 2% 2% 20px 2%;
+                                                        }
+                                                        
+                                                        .container ul li a img {
+                                                            max-width: 100%;
+                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                                                        }
+                                                        
+                                                        @media only screen and (max-width: 940px),
+                                                        only screen and(max-device: 940px) {}
+                                                        
+                                                        @media only screen and (max-width: 720px),
+                                                        only screen and(max-device: 720px) {
+                                                            .container ul li {
+                                                                width: 27%;
+                                                            }
+                                                            @media only screen and (max-width: 530px),
+                                                            only screen and(max-device: 530px) {
+                                                                .container ul li {
+                                                                    width: 46%;
+                                                                }
+                                                            }
+                                                            @media only screen and (max-width: 320px),
+                                                            only screen and(max-device: 320px) {
+                                                                .container ul li {
+                                                                    width: 100%;
+                                                                }
+                                                                .wrapper_video {
+                                                                    width: 50%;
+                                                                    float: left;
+                                                                    background-color: #fafafa;
+                                                                    border-radius: 5px;
+                                                                    border: 1px solid silver;
+                                                                    box-sizing: border-box;
+                                                                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                                                                    padding-bottom: 20px;
+                                                                    box-sizing: border-box;
+                                                                    display: flex;
+                                                                    flex-wrap: wrap;
+                                                                    justify-content: space-around;
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                        .wrapper_video {
+                                                            width: 100%;
+                                                            float: left;
+                                                            background-color: #fafafa;
+                                                            border-radius: 5px;
+                                                            border: 1px solid silver;
+                                                            box-sizing: border-box;
+                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                                                            padding-bottom: 20px;
+                                                            box-sizing: border-box;
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                                            justify-content: space-around;
+                                                        }
+                                                        
+                                                        .video_item {
+                                                            text-align: center;
+                                                        }
+                                                        
+                                                        .subtitle {
+                                                            position: relative;
+                                                            font-weight: bold;
+                                                        }
+                                                        
+                                                        .wrapper_video h2 {
+                                                            padding-top: 10px;
+                                                            padding-bottom: 10px;
+                                                        }
+                                                        
+                                                        .video {
+                                                            float: left;
+                                                            width: 100%;
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                                            justify-content: space-around;
+                                                            text-align: center;
+                                                            padding: 20px;
+                                                        }
+                                                        
+                                                        .video iframe {
+                                                            max-width: 100%;
+                                                        }
+                                                        
+                                                        .wrapper_video p {
+                                                            position: relative;
+                                                            top: 5px;
+                                                            font-weight: bold;
+                                                        }
+                                                        
+                                                        .wrapper_video iframe {
+                                                            display: block;
+                                                            box-shadow: 4px 4px 5px rgba(121, 120, 120, 0.5);
+                                                        }
+                                                        
+                                                        .list {
+                                                            width: 80%;
+                                                            margin-left: 50px;
+                                                            padding-top: 30px;
+                                                        }

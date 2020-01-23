@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+#card {
+    padding: 10px;
+}
+
+.navbar {
+    background: #708090;
+}
+
+
+/*
+.nav-link,
+.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: #f4f4f4;
+    color: #9cafce;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+*/
+
+
+/*Portfolio*/
+
+.portfolio {
+    margin: 2em 0;
+    position: relative;
+}
+
+.portfolio h2 {
+    color: #4286f4;
+    margin: 2em;
+}
+
+.portfolio img {
+    max-width: 90%;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.blog {
+    margin: 4em 0;
+    position: relative;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.blog h2 {
+    color: #10828C;
+    margin: 2em;
+}
+
+.blog .card {
+    box-shadow: 0 0 20px #ccc;
+    margin: 1em;
+    padding-bottom: 10px;
+}
+
+.blog .card img {
+    width: 100%;
+    height: 100%;
+}
+
+.blog .card-title {
+    color: #10828C;
+}
+
+.blog .card-body {
+    padding: 1em;
+}
+
+.blog .card-text {
+    height: 100px;
+}
+
+#aboutsite {
+    background: #9cafce;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+footer {
+    max-width: 100%;
+    background: #708090;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    padding: 15px;
+}
+
+.right {
+    margin: 5px;
+    max-width: 64px;
+    justify-content: flex-end;
+}
+
+.right img {
+    max-width: 30px;
+}
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
+.row.content {
+    height: 100%;
+}
+
+
+/* Set gray background color and 100% height */
+
+.sidenav {
+    position: fixed;
+    padding-top: 30px;
+    background-color: #f1f1f1;
+    max-height: 100%;
+}
+
+
+/* Set black background color, white text and some padding */
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {
+        height: auto;
+    }
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    height: 50px;
+    width: 50px;
+}
+
+iframe {
+    padding-top: 5px;
+    height: 450px;
+    width: 100%;
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    iframe {
+        padding-top: 5px;
+        height: 200px;
+        width: 100%;
+        display: block;
+    }
+}
+
+#vk_comments {
+    margin-bottom: 15px;
+}
+
+.container-fluid {
+    max-width: 100%;
+}
+
+
+/*стили для поиска от яндекса*/
+
+#ya-site-results {
+    color: #000000;
+    background: #FFFFFF;
+}
+
+#ya-site-results .b-pager__current,
+#ya-site-results .b-serp-item__number {
+    color: #000000 !important;
+}
+
+#ya-site-results {
+    font-family: Arial !important;
+}
+
+#ya-site-results :visited,
+#ya-site-results .b-pager :visited,
+#ya-site-results .b-foot__link:visited,
+#ya-site-results .b-copyright__link:visited {
+    color: #800080;
+}
+
+#ya-site-results a:link,
+#ya-site-results a:active,
+#ya-site-results .b-pseudo-link,
+#ya-site-results .b-head-tabs__link,
+#ya-site-results .b-head-tabs__link:link,
+#ya-site-results .b-head-tabs__link:visited,
+#ya-site-results .b-dropdown__list .b-pseudo-link,
+#ya-site-results .b-dropdowna__switcher .b-pseudo-link,
+.b-popupa .b-popupa__content .b-menu__item,
+#ya-site-results .b-foot__link:link,
+#ya-site-results .b-copyright__link:link,
+#ya-site-results .b-serp-item__mime,
+#ya-site-results .b-pager :link {
+    color: #0033FF;
+}
+
+#ya-site-results :link:hover,
+#ya-site-results :visited:hover,
+#ya-site-results .b-pseudo-link:hover {
+    color: #FF0000 !important;
+}
+
+#ya-site-results .l-page,
+#ya-site-results .b-bottom-wizard {
+    font-size: 13px;
+}
+
+#ya-site-results .b-pager {
+    font-size: 1.25em;
+}
+
+#ya-site-results .b-serp-item__text,
+#ya-site-results .ad {
+    font-style: normal;
+    font-weight: normal;
+}
+
+#ya-site-results .b-serp-item__title-link,
+#ya-site-results .ad .ad-link {
+    font-style: normal;
+    font-weight: normal;
+}
+
+#ya-site-results .ad .ad-link a {
+    font-weight: bold;
+}
+
+#ya-site-results .b-serp-item__title,
+#ya-site-results .ad .ad-link {
+    font-size: 16px;
+}
+
+#ya-site-results .b-serp-item__title-link:link,
+#ya-site-results .b-serp-item__title-link {
+    font-size: 1em;
+}
+
+#ya-site-results .b-serp-item__number {
+    font-size: 13px;
+}
+
+#ya-site-results .ad .ad-link a {
+    font-size: 0.88em;
+}
+
+#ya-site-results .b-serp-url,
+#ya-site-results .b-direct .url,
+#ya-site-results .b-direct .url a:link,
+#ya-site-results .b-direct .url a:visited {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    color: #329932;
+}
+
+#ya-site-results .b-serp-item__links-link {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000 !important;
+}
+
+#ya-site-results .b-pager__inactive,
+#ya-site-results .b-serp-item__from,
+#ya-site-results .b-direct__head-link,
+#ya-site-results .b-image__title,
+#ya-site-results .b-video__title {
+    color: #000000 !important;
+}
+
+#ya-site-results .b-pager__current,
+#ya-site-results .b-pager__select {
+    background: #E0E0E0;
+}
+
+#ya-site-results .b-foot,
+#ya-site-results .b-line {
+    border-top-color: #E0E0E0;
+}
+
+#ya-site-results .b-dropdown__popup .b-dropdown__list,
+.b-popupa .b-popupa__content {
+    background-color: #FFFFFF;
+}
+
+.b-popupa .b-popupa__tail {
+    border-color: #E0E0E0 transparent;
+}
+
+.b-popupa .b-popupa__tail-i {
+    border-color: #FFFFFF transparent;
+}
+
+.b-popupa_direction_left.b-popupa_theme_ffffff .b-popupa__tail-i,
+.b-popupa_direction_right.b-popupa_theme_ffffff .b-popupa__tail-i {
+    border-color: transparent #FFFFFF;
+}
+
+#ya-site-results .b-dropdowna__popup .b-menu_preset_vmenu .b-menu__separator {
+    border-color: #E0E0E0;
+}
+
+.b-specification-list,
+.b-specification-list .b-pseudo-link,
+.b-specification-item__content label,
+.b-specification-item__content .b-link,
+.b-specification-list .b-specification-list__reset .b-link {
+    color: #000000 !important;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.b-specification-item__content .b-calendar__title {
+    font-family: Arial;
+    color: #000000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.b-specification-item__content .b-calendar-month__day_now_yes {
+    color: #E0E0E0;
+}
+
+.b-specification-item__content .b-calendar .b-pseudo-link {
+    color: #000000;
+}
+
+.b-specification-item__content {
+    font-family: Arial !important;
+    font-size: 13px;
+}
+
+.b-specification-item__content :visited {
+    color: #800080;
+}
+
+.b-specification-item__content .b-pseudo-link:hover,
+.b-specification-item__content :visited:hover {
+    color: #FF0000 !important;
+}
+
+#ya-site-results .b-popupa .b-popupa__tail-i {
+    background: #FFFFFF;
+    border-color: #E0E0E0 !important;
+}
+
+#ya-site-form__search-input {
+    max-width: 200px;
+}
+
+
+/*------------------------------*/
+
+video {
+    max-width: 100%;
+}
+
+.newsfromyandex{
+    border: 1px solid silver;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.task{
+    align-content: center;
+    justify-content: initial;
+    padding: 30px;
+}
+
+.taxi{
+    padding: 20px;
+}
+
+.preim_item img{
+    height: 80px;
+    width: 80px;
+    float: left;
+    padding: 5px;
+}
+.preim{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.preim_item{
+    float: left;
+    color: honeydew;
+    border: 1px solid silver;
+    max-width: 45%;
+    padding: 15px;
+    
+    margin: 5px;
+}
+
+.img-fluid{
+    height: 160px;
+    
+}
+.card-body{
+    min-height: 300px;
+}

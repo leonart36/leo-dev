@@ -1,0 +1,340 @@
+ $login = $_POST['login'];
+                    $password = $_POST['password'];
+                    $count = mysqli_query($connection, "SELECT * FROM `user`
+                     WHERE `login` = '$login' AND `password` = '$password'");
+                     if (mysqli_num_rows($count)==0){
+                         echo '<a class="nav-link " data-value="login" href="login.php">Войти</a>';
+                         echo '<a class="nav-link " data-value="signup" href="signup.php">Зарегистрироваться</a>';
+                        }else{
+                            echo 'Привет, ' .$login . '!';
+                        }
+
+
+
+
+                        вывод комментариев
+                        <div class="block">
+    <h3>Комментарии</h3>
+    <div class="block_content">
+        <div class="articlesarticles_vertical">
+            <?php
+            $comments = msqli_query($connection, "SELECT * FROM `comments` ORDER BY `id` DESC LIMIT 5");
+
+            while($comment = mysqli_fetch_assoc($comments))
+            {
+                ?>
+                <article class="article">
+                <div class="article_image" style="background-image: url(http://www.gravatar.com/avatar/<?php echo md5($comment['email']); ?>?s=125);"></div>
+                <div class="article_info">
+                    <a href="/article.php?id=<?php echo $comment['articles_id'];?>"><?php echo $comment['author']; ?></a>
+                    <div class="article_info_preview"><?php echo mb_substr(strip_tags($comment['text']),0, 100, 'utf-8'). ' ...' ?> </div>
+                </div>
+                </article>
+                <?php
+                }
+                ?>
+        </div>
+    </div>
+</div>
+
+
+
+<!--
+
+    //             <div class="col-md-4 col-lg-4 col-sm-12">
+    //                 <div class="card">
+    //                     <div class="card-img">
+    //                         <img align="center" src="image/posts/fit/1.jpg" class="img-fluid">
+    //                     </div>
+
+    //                     <div class="card-body" id="posts">
+    //                         <h4 class="card-title">Королева фитнесса</h4>
+    //                         <p class="card-text">
+
+    //                             Принял участие в съемках сериала Королева фитнесса
+    //                         </p>
+    //                     </div>
+    //                     <div class="card-footer">
+    //                         <a href="" class="card-link">Смотреть дальше</a>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //             <div class="col-md-4 col-lg-4 col-sm-12">
+    //                 <div class="card">
+    //                     <div class="card-img">
+    //                         <img align="center" src="image/posts//strel/1.jpg" class="img-fluid">
+    //                     </div>
+
+    //                     <div class="card-body">
+    //                         <h4 class="card-title">Стрельцов</h4>
+    //                         <p class="card-text">
+
+    //                             Принял участие в съемках фильма "Стрельцов"
+    //                         </p>
+    //                     </div>
+    //                     <div class="card-footer">
+    //                         <a href="" class="card-link">Смотреть дальше</a>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div>
+
+
+-->
+Вывод статей с пагинацией. не получается пагинация- не переходит на другую страницу
+источник https://www.youtube.com/watch?v=xihMCwARRpk
+<div class="blog" id="blog">
+    <div class="container">
+        <div class="col">
+            <div class="row">
+            
+                <?php
+
+                //Для пагинации
+                     $per_page = 6;
+                     $page = 1;
+                    if(isset($_GET['page']))
+                    {
+                         $page = (int) $_GET['page'];
+                    }
+                    $total_count_q = mysqli_query($connection, "SELECT COUNT('id') AS `total_count` FROM `articles`");
+                    $total_count = mysqli_fetch_assoc($total_count_q);
+                    $total_count = $tptal_count['total_count'];
+           
+                     $total_pages = ceil($total_count / $per_page);//определяем количество страниц (ceil-округление в большую)
+                     if($page <= 1 || $page > $total_pages)
+                    {
+                         $page = 1;
+                    }
+            
+           
+                     $offset = ($per_page * $page) - $per_page;
+                    //должно получиться следующее:
+                    //1    -    (6 * 1) - 6    - 0, 6
+                     //2    -    (6 * 2) - 6    - 6, 6
+                    //3    -    (6 * 3) - 6    - 12, 6
+                     $articles_exist = true;
+                     $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT $offset, $per_page"); //если после DESC добавить LIMIT 10- будет выводиться 10 последних статей
+            
+                    if(mysqli_num_rows($articles)<=0)
+                     {
+                        echo 'Статьи не найдены!';
+                        $articles_exist = false;
+                     }
+                            while($art = mysqli_fetch_assoc($articles)){
+                 ?>
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                   
+               
+                    <div class="card">
+                        <div class="card-img">
+                            <img align="center" src="image/posts/cheln/1.jpg" class="img-fluid">
+                        </div>                                             
+                        <div class="card-body">
+                            <h4 class="card-title"><?php echo $art['title']; ?></h4>
+                            <p class="card-text">
+                               <?php echo mb_substr(strip_tags($art['text']), 0, 70, 'utf-8').' ...';?>
+                            </p>
+                            <?php
+                            $art_cat = false;
+                            foreach($categories as $cat){
+                                if($cat['id'] == $art['categorie_id'])
+                                {
+                                    $art_cat = $cat;
+                                    break;
+                                }
+                            }
+                            ?>
+                            <small>Категория: <a href="/categorie.php?categorie=<?php echo $art_cat['id'];?>">
+                            <?php echo $art_cat['title']; 
+                            ?>
+                            </a><br></small>
+                            <small><?php echo $art['views'];  ?> просмотров</small>
+                        </div>
+                        <div class="card-footer">
+                            <a href="article.php?id=<?php echo $art['id']; ?>" class="card-link">Смотреть дальше</a>
+                        
+                            </div>
+                        </div>
+                        </div>
+                  
+                      
+                            <?php } ?>
+                     
+                
+            </div>
+          
+            <?php
+                        if($articles_exist == true)
+                        {
+                             echo '<div class="paginator">';
+                             
+                            if($page >= 1)
+                            {
+                                echo $page;
+                                echo '<a href="blog.php?page='.($page + 1).'">Следующая страница</a>';
+                            }
+                            if($page < $total_pages)
+                            {
+                                echo '<a href="blog.php?page='.($page - 1).'"> Предыдущая страница</a>    ';
+                                
+                            }
+                            echo '</div>';
+                        }
+                        ?>
+        </div>
+        
+                    </div>
+
+динамическое создание карточки
+<div class="col-md-6 col-lg-3 col-sm-12" id="card">
+   
+
+    <div class="card">
+        <div class="card-img">
+            <img align="center" src="image/posts/cheln/1.jpg" class="img-fluid">
+        </div>                                             
+        <div class="card-body">
+            <h4 class="card-title"><?php echo $art['title']; ?></h4>
+            <p class="card-text">
+               <?php echo mb_substr(strip_tags($art['text']), 0, 70, 'utf-8').' ...';?>
+            </p>
+            <?php
+            $art_cat = false;
+            foreach($categories as $cat){
+                if($cat['id'] == $art['categorie_id'])
+                {
+                    $art_cat = $cat;
+                    break;
+                }
+            }
+            ?>
+            <small>Категория: <a href="/categorie.php?categorie=<?php echo $art_cat['id'];?>">
+            <?php echo $art_cat['title']; 
+            ?>
+            </a><br></small>
+            <small><?php echo $art['views'];  ?> просмотров</small>
+        </div>
+        <div class="card-footer">
+            <a href="article.php?id=<?php echo $art['id']; ?>" class="card-link">Смотреть дальше</a>
+        
+            </div>
+        </div>
+        </div>
+  
+      
+            <?php } ?>
+     
+
+</div>
+
+<?php
+        if($articles_exist == true)
+        {
+             echo '<div class="paginator">';
+             
+            if($page > 1)
+            {
+                echo '<a href="blog.php?page='.($page - 1).'"> Предыдущая страница</a>    ';
+            
+            }
+            if($page < $total_pages)
+            {
+                echo '<a href="blog.php?page='.($page + 1).'">Следующая страница</a>';
+                
+            }
+            echo '</div>';
+        }
+        ?>
+  </div>
+</div> 
+
+ДИНАМИЧЕСКОЕ ПОДТЯГИВАНИЕ СТАТЕЙ В КАРТОЧКИ ИЗ БД 
+ <?php
+
+//Для пагинации
+     $per_page = 6;
+     $page = 1;
+    if(isset($_GET['page']))
+    {
+         $page = (int) $_GET['page'];
+    }
+    $total_count_q = mysqli_query($connection, "SELECT COUNT('id') AS `total_count` FROM `articles`");
+    $total_count = mysqli_fetch_assoc($total_count_q);
+    $total_count = $total_count['total_count'];
+
+     $total_pages = ceil($total_count / $per_page);//определяем количество страниц (ceil-округление в большую)
+     if($page <= 1 || $page > $total_pages)
+    {
+         $page = 1;
+    }
+
+
+     $offset = ($per_page * $page) - $per_page;
+    //должно получиться следующее:
+    //1    -    (6 * 1) - 6    - 0, 6
+     //2    -    (6 * 2) - 6    - 6, 6
+    //3    -    (6 * 3) - 6    - 12, 6
+     $articles_exist = true;
+     $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT $offset, $per_page"); //если после DESC добавить LIMIT 10- будет выводиться 10 последних статей
+
+    if(mysqli_num_rows($articles)<=0)
+     {
+        echo 'Статьи не найдены!';
+        $articles_exist = false;
+     }
+            while($art = mysqli_fetch_assoc($articles)){
+ ?>
+
+ <?php } ?>
+
+ ДЛЯ ПАГИНАТОР. ВТОРА ЧАСТЬ
+ <?php
+        if($articles_exist == true)
+        {
+             echo '<div class="paginator">';
+             
+            if($page > 1)
+            {
+                echo '<a href="blog.php?page='.($page - 1).'"> Предыдущая страница</a>    ';
+            
+            }
+            if($page < $total_pages)
+            {
+                echo '<a href="blog.php?page='.($page + 1).'">Следующая страница</a>';
+                
+            }
+            echo '</div>';
+        }
+        ?>
+
+
+        ВЫВОД КАТЕГОРИЙ
+
+         <?php
+            
+
+            $categories_q = mysqli_query($connection, "SELECT * FROM `articles_categories`");
+            $categories = array();
+            while($cat = mysqli_fetch_assoc($categories_q))
+                      {
+                          $categories[] = $cat;
+                      }
+            ?>
+
+    <!--<div class="col-3">
+    <h2>Категории</h2>
+                <ul>
+                      //<?php
+                       // foreach($categories as $cat)
+                      //{
+                          ?>
+                          <li><a href="/categorie.php?categorie=<//?php echo $cat['id']; 
+                          ?>">
+                          <//?php echo $cat['title']; ?></a></li>
+                      <?php
+                       // }
+                      ?>
+                </ul>

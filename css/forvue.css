@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+.navbar {
+    background: #9cafce;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: #f4f4f4;
+    color: #9cafce;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+
+.col {
+    background: #afbbcf;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 20px;
+}
+
+.detailed-car-imege {
+    height: 180px;
+}
+
+.list-group:hover {
+    cursor: pointer;
+}
+
+.phone-block {
+    height: 36px;
+}
+
+.btn-outline-success {
+    width: 200px;
+}
+
+.btn-primary btn-lg active {
+    margin: 4em 0;
+    padding: 1em;
+    position: relative;
+}
+
+.modal {
+    display: block;
+}
+
+
+/*Animations*/
+
+
+/*  *-enter   -действует, когда появляется класс  */
+
+
+/*  *-enter-active   -класс висит то время, за которое его нужно проанимировать  */
+
+
+/*  *-enter-to    -это класс, куда стремится элемент. добавится к финалу     */
+
+
+/* для исчезновения все тоже самое только вместо enter- leave*/
+
+.phone-enter-active,
+.phone-leave-active {
+    transition: all .5s;
+}
+
+.phone-enter,
+.phone-leave-to {
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: all .5s;
+}
+
+.modal-enter,
+.modal-leave-to {
+    transform: translateY(-100px);
+}
+
+.fade-enter-active {
+    animation: .75s fade forwards;
+}
+
+.fade-leave-active {
+    animation: .75s fade reverse;
+}
+
+.fade-ener,
+.fade-leave-to {
+    opacity: 0;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    border: 1px solid white;
+    padding: 0 1rem;
+}
+
+footer {
+    height: 60px;
+    background: #9cafce;
+    padding: 15px;
+    position: relative;
+}
+
+footer span {
+    position: relative;
+}
+
+.right {
+    float: right;
+    margin: 5px;
+    max-width: 64px;
+}
+
+.right img {
+    max-width: 30px;
+}

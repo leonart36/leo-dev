@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+.products {
+    margin-top: 20px;
+}
+
+.card {
+    margin: 100px 0;
+    transition: all .5s;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgb(90, 89, 89)
+}
+
+.navbar {
+    background: #9cafce;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+    background: 9cafce;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: #f4f4f4;
+    color: #9cafce;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+
+footer {
+    height: 60px;
+    background: #9cafce;
+    padding: 15px;
+    position: relative;
+}
+
+footer span {
+    position: relative;
+}
+
+.right {
+    float: right;
+    margin: 5px;
+    max-width: 64px;
+}
+
+.right img {
+    max-width: 30px;
+}

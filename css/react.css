@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+.navbar {
+    background: #9cafce;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: #f4f4f4;
+    color: #9cafce;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+
+.app {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: box-shadow .3s ease-in-out;
+    display: flex;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+}
+
+.card.marked {
+    border: 2px solid crimson;
+}
+
+.card-img {
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.counter {
+    position: relative;
+    top: 300px;
+}
+
+footer {
+    height: 60px;
+    background: #9cafce;
+    padding: 15px;
+    position: relative;
+}
+
+footer span {
+    position: relative;
+}
+
+.right {
+    float: right;
+    margin: 5px;
+    max-width: 64px;
+}
+
+.right img {
+    max-width: 30px;
+}

@@ -1,0 +1,8 @@
+﻿User-agent: *
+Allow: /articles/about_site.html
+Allow: /articles/movies/baltika/baltika.html
+Allow: /articles/movies/chelnochnicy/chelnochnicy.html
+Allow: /articles/movies/fitness/fitness.html
+Allow: /articles/movies/souz/souzspasiniya.html
+
+Host: www.leo-dev.ru
